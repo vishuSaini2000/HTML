@@ -1,0 +1,86 @@
+<!--Create a Registration form using all form fields with html5 validations.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessprep</title>
+    <link rel="icon" type="image/png" href="Ap_favicon.png">
+    <style>
+        body{
+            background-image:url('Assessprep_background.jpeg');background-size: cover ;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <center><img src="https://www.assessprep.com/_next/static/image/src/common/assets/image/saas/logo.ceb3846d02e7d5d76ab3b7a2cf99b87c.png"/></center>
+    <center><h2><u>Registration Form</u></h2></center>
+    <form id="registrationForm" action="#" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required pattern="[A-Za-z]+" minlength="2" maxlength="30">
+        <br>
+        <span class="error">Only letters (2-30 characters) allowed</span><br>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required pattern="[A-Za-z]+" minlength="2" maxlength="30">
+        <br>
+        <span class="error">Only letters (2-30 characters) allowed</span><br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <span class="error">Must be in a valid email format</span><br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8">
+        <br>
+        <span class="error">Password must be at least 8 characters long</span><br>
+        <br>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8">
+        <br>
+        <span class="error">Passwords do not match</span><br>
+        <br>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+        <br>
+        <span class="error">Please enter a valid date</span><br>
+        <br>
+        <label for="gender">Gender:</label>
+        <br>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <span class="error">Please select a gender</span><br>
+
+        <label for="newsletter">Agreed to terms & Condition:</label>
+        <input type="checkbox" id="newsletter" name="newsletter"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (form.checkValidity()) {
+                // Form validation is successful, you can handle the form submission here
+                console.log("Form submission successful!");
+            } else {
+                // Form validation failed, you can show error messages or styles here
+                console.log("Form validation failed!");
+            }
+        });
+    </script>
+    </center>
+</body>
+</html>
